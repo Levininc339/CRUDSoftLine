@@ -1,0 +1,36 @@
+﻿@model TBLPRODUCTOSModel
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Editar Producto
+    </div>
+    <div class="card-body">
+        <form asp-action="Editar" asp-controller="Mantenedor" method="post">
+
+            <input asp-for="IdProducto" type="hidden" class="form-control">
+            <div class="mb-3">
+                <label class="form-label">Nombre Producto</label>
+                <input asp-for="NombreProd" type="text" class="form-control">
+                <span asp-validation-for="NombreProd" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Precio</label>
+                <input asp-for="Precio" type="text" class="form-control">
+                <span asp-validation-for="Precio" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Descripcion</label>
+                <input asp-for="DescripcionProd" type="text" class="form-control">
+                <span asp-validation-for="DescripcionProd" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a asp-action="Listar" asp-controller="Mantenedor" class="btn btn-warning">Volver a la lista</a>
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,26 @@
+﻿@model TBLPRODUCTOSModel
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Editar Producto
+    </div>
+    <div class="card-body">
+        <form asp-action="Eliminar" asp-controller="Mantenedor" method="post">
+
+            <input asp-for="IdProducto" type="hidden" class="form-control">
+           
+            <div class="alert alert-danger" role="alert">
+                Desea eliminar el producto? : @Html.DisplayTextFor(mbox => mbox.NombreProd) ?
+            </div>
+
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <a asp-action="Listar" asp-controller="Mantenedor" class="btn btn-warning">Volver a la lista</a>
+        </form>
+    </div>
+</div>
+
+
